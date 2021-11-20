@@ -8,62 +8,36 @@ using System;
 public class LevelUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI roundText;
-    [SerializeField] TextMeshProUGUI numberOfEnemiesText;
-    [SerializeField] TextMeshProUGUI numberOfEnemiesReachedEndLevelText;
+    [SerializeField] TextMeshProUGUI numberOfRemainingEnemiesToReachEndLevelText;
+    [SerializeField] TextMeshProUGUI numberOfEnemiesKilledText;
     [SerializeField] TextMeshProUGUI coinsText;
-    
+
     void Awake()
     {
         LevelManager.instance.OnRoundChanged += HandleRoundChanged;
-        LevelManager.instance.OnTotalOfEnemiesChanged += HandleTotalOfEnemiesChanged;
-        LevelManager.instance.OnTotalOfEnemiesReachedEndLevelChanged += HandleTotalOfEnemiesReachedEndLevelChanged;
+        LevelManager.instance.OnRemainingEnemiesToCrossEndLevelChanged += HandleRemainingEnemiesToCrossEndLevelChanged;
         LevelManager.instance.OnPlayerCoinsChanged += HandlePlayerCoinsChanged;
+        LevelManager.instance.OnEnemyKilledChanged += HandleEnemyKilledChanged;
+
+    }
+
+    private void HandleEnemyKilledChanged(object sender, int e)
+    {
+        numberOfEnemiesKilledText.text = e.ToString();
     }
 
     private void HandlePlayerCoinsChanged(object sender, int e)
     {
-        UpdateCoinsText(e);
+        coinsText.text = e.ToString();
     }
 
-
-    private void HandleTotalOfEnemiesChanged(object sender, int e)
-    {
-        UpdateNumberOfEnemiesText(e);
-    }
-
-    private void HandleRoundChanged(object sender, int e)
-    {
-        UpdateRoundText(e);
-    }
-
-    private void HandleTotalOfEnemiesReachedEndLevelChanged(object sender, int e)
-    {
-        UpdateTotalOfEnemiesReachedEndLevelText(e);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    void UpdateRoundText(int round)
+    private void HandleRoundChanged(object sender, int round)
     {
         roundText.text = $"Round: {round}";
     }
 
-    void UpdateNumberOfEnemiesText(int enemies)
+    private void HandleRemainingEnemiesToCrossEndLevelChanged(object sender, int e)
     {
-        numberOfEnemiesText.text = $"Remaining Enemies: {enemies}";
-    }
-
-    void UpdateTotalOfEnemiesReachedEndLevelText(int enemies)
-    {
-        numberOfEnemiesReachedEndLevelText.text = $"Reached the end level: {enemies}";
-    }
-
-    private void UpdateCoinsText(int e)
-    {
-         coinsText.text = $"Coins: {e}";
+        numberOfRemainingEnemiesToReachEndLevelText.text = e.ToString();
     }
 }

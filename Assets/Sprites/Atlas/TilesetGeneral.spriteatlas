@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TilesetGeneral
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: f284b191c59ed4be4bb020b082b193e4, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 1b5c01809b8d94db188a50ea6d4b75a0, type: 3}
+  - {fileID: 21300000, guid: 4d97ebb5d0db143ef8bfc5df92b6e8c8, type: 3}
+  - {fileID: 21300000, guid: cc72b1071b91747bb8c928a2fa39a1f0, type: 3}
+  - {fileID: 21300000, guid: ce1bacbac60514ab1866990b1185a3cc, type: 3}
+  - {fileID: 21300000, guid: b1a3198bba6c64822a310e4114829b0e, type: 3}
+  - {fileID: 21300000, guid: fc1318bee35684c168d22a9a3b326c99, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - barrelRust_top
+  - shotThin
+  - survivor1_gun
+  - fenceRed
+  - bulletDark3_outline
+  - fenceYellow
+  m_RenderDataMap: {}
+  m_Tag: TilesetGeneral
+  m_IsVariant: 0

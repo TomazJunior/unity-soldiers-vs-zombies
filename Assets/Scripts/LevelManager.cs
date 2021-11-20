@@ -9,7 +9,9 @@ public class LevelManager : MonoBehaviour
     internal event System.EventHandler<int> OnRoundChanged;
     internal event System.EventHandler<int> OnTotalOfEnemiesChanged;
     internal event System.EventHandler<int> OnTotalOfEnemiesReachedEndLevelChanged;
+    internal event System.EventHandler<int> OnRemainingEnemiesToCrossEndLevelChanged;
     internal event System.EventHandler<int> OnPlayerCoinsChanged;
+    internal event System.EventHandler<int> OnEnemyKilledChanged;
     internal event System.EventHandler OnGameOver;
     [SerializeField] List<EnemySpawner> enemySpawners = new List<EnemySpawner>();
     [SerializeField] private Vector2 rangeTimeBetweenEnemies;
@@ -22,6 +24,7 @@ public class LevelManager : MonoBehaviour
 
 
     private int totalOfEnemies = 0;
+    private int totalOfEnemiesKilled = 0;
     private List<Enemy> enemies = new List<Enemy>();
     private List<Ally> allies = new List<Ally>();
 
@@ -80,16 +83,17 @@ public class LevelManager : MonoBehaviour
     {
         enemies.Add(enemy);
     }
-    internal void RemoveEnemy(Enemy enemy)
+    internal void RemoveEnemy(Enemy enemy, bool reachedTheEndLine = false)
     {
         enemies.Remove(enemy);
         Destroy(enemy.gameObject);
 
         TotalOfEnemies--;
 
-        if (!this.isGameOver)
+        if (!reachedTheEndLine && !this.isGameOver)
         {
             Coins += enemy.CoinsAwards;
+            OnEnemyKilledChanged?.Invoke(this, ++totalOfEnemiesKilled);
         }
 
         if (TotalOfEnemies != 0)
@@ -123,9 +127,10 @@ public class LevelManager : MonoBehaviour
 
     internal void EnemyReachedEndLine(Enemy enemy)
     {
-        RemoveEnemy(enemy);
+        RemoveEnemy(enemy, true);
         enemiesReachedEndLine++;
         OnTotalOfEnemiesReachedEndLevelChanged?.Invoke(this, enemiesReachedEndLine);
+        OnRemainingEnemiesToCrossEndLevelChanged?.Invoke(this, maxEnemiesReachedEndLine - enemiesReachedEndLine);
         if (enemiesReachedEndLine >= maxEnemiesReachedEndLine)
         {
             StartCoroutine(showGameOverScene());
@@ -142,6 +147,10 @@ public class LevelManager : MonoBehaviour
         
         ClearLevel();
 
+        GameOverSceneModel.coins = coins;
+        GameOverSceneModel.enemiesKilled = totalOfEnemiesKilled;
+
+
         AsyncOperation load = SceneManager.LoadSceneAsync("GameOverScene", LoadSceneMode.Additive);
         yield return load;
     }
@@ -151,11 +160,14 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         ClearLevel();
+        
         this.Coins = initialCoins;
         this.isGameOver = false;
         enemiesReachedEndLine = 0;
+        OnRemainingEnemiesToCrossEndLevelChanged?.Invoke(this, maxEnemiesReachedEndLine);
         round = 0;
         TotalOfEnemies = 0;
+        totalOfEnemiesKilled = 0;
         StartLevel();
     }
 

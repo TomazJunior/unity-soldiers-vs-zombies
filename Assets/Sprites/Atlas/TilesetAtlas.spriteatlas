@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TilesetAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 9def6de0b4f0c45dc9f85ef0b522dbb3, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 9244ef1042ffd432d9bbec50fb266196, type: 3}
+  - {fileID: 21300000, guid: 9e9e0e90a067a482abb805a167a50030, type: 3}
+  - {fileID: 21300000, guid: b13d87f27685343c5a7c6f1ac5002e56, type: 3}
+  - {fileID: 21300000, guid: 5c12514332eaa470882f17749439abbb, type: 3}
+  - {fileID: 21300000, guid: 8b7bd2636e54e4fc9ba5ac23b1af93ea, type: 3}
+  - {fileID: 21300000, guid: 4fdb8574c50cb46dcac7f84353264a82, type: 3}
+  - {fileID: 21300000, guid: 2f907d94aafb74857b3ba6c570d5f679, type: 3}
+  - {fileID: 21300000, guid: d05b0415d2e1f4ffea6551a1c03e07f4, type: 3}
+  - {fileID: 21300000, guid: eff5ecd5dcbb44e73a2c43e41d976541, type: 3}
+  - {fileID: 21300000, guid: f105c2f61eb3c4375b4690136930734e, type: 3}
+  - {fileID: 21300000, guid: 4921b80743e244882aae00d05b9f2af5, type: 3}
+  - {fileID: 21300000, guid: c59936170cf024b498521e4d1b3a92da, type: 3}
+  - {fileID: 21300000, guid: a818db97fafb84a89b931f744817bcc1, type: 3}
+  - {fileID: 21300000, guid: 60a67389299054c59ae5d5804ddfde9f, type: 3}
+  - {fileID: 21300000, guid: e9e3de7bb511e4aec9b67aa59edab7fe, type: 3}
+  - {fileID: 21300000, guid: 2b4334ab152634f2496f378854616366, type: 3}
+  - {fileID: 21300000, guid: 395c3fdbd0ec64c2db49f11fb67fc641, type: 3}
+  - {fileID: 21300000, guid: fbde491ce6f5c4f8fb9777a44a1e97f1, type: 3}
+  - {fileID: 21300000, guid: e435722c595fe42eaab6fe645ebe3489, type: 3}
+  - {fileID: 21300000, guid: 089475bc9b62541b6bc1627820156732, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - tile_235
+  - tile_238
+  - tileSand1
+  - tile_293
+  - tile_320
+  - tileGrass_roadTransitionE_dirt
+  - tileSand2
+  - tile_239
+  - tile_237
+  - tileGrass_roadTransitionW
+  - treeBrown_twigs
+  - tileSand_roadEast
+  - tileGrass_transitionE
+  - tileGrass1
+  - treeBrown_large
+  - tile_262
+  - tileGrass2
+  - treeGreen_large
+  - tileGrass_roadEast
+  - treeGreen_twigs
+  m_RenderDataMap: {}
+  m_Tag: TilesetAtlas
+  m_IsVariant: 0
