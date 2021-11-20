@@ -106,7 +106,7 @@ RectTransform:
   m_GameObject: {fileID: 943165488851546539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 943165487915027687}
   m_RootOrder: 0
@@ -204,7 +204,7 @@ RectTransform:
   m_GameObject: {fileID: 943165488897693890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 943165487915027687}
   m_Father: {fileID: 0}
@@ -231,7 +231,7 @@ MonoBehaviour:
   slotLayer:
     serializedVersion: 2
     m_Bits: 64
-  allyStats: {fileID: 0}
+  allyStats: {fileID: 11400000, guid: 7c6b2ae956acb4b9387dd9e0a40e6f7c, type: 2}
   coinText: {fileID: 6252110394588488128}
 --- !u!1 &1748123747540050285
 GameObject:

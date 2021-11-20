@@ -45,10 +45,10 @@ public class AllySpawnerButton : MonoBehaviour
 
     private void HandleEndDragAlly(object sender, Vector3 position)
     {
-        Collider2D collider2D1 = Physics2D.OverlapBox(position, Vector2.one, 0, slotLayer);
-        if (collider2D1)
+        Collider2D collider2D = Physics2D.OverlapBox(position, new Vector2(.5f, .5f), 0, slotLayer);
+        if (collider2D)
         {
-            AllySlot allySlot = collider2D1.GetComponent<AllySlot>();
+            AllySlot allySlot = collider2D.GetComponent<AllySlot>();
             if (!allySlot.HasAlly())
             {
                 allySlot.SetAlly(allyStats);

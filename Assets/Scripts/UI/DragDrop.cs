@@ -43,4 +43,10 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     {
         rectTransform.anchoredPosition = initialAnchoredPosition;
     }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireCube(transform.position, new Vector2(.5f, .5f));
+    }
 }

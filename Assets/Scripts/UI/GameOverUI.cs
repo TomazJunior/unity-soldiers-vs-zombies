@@ -16,7 +16,6 @@ public class GameOverUI : MonoBehaviour
 
     IEnumerator closeGameOverScene()
     {
-        // continueGame();
         AsyncOperation load = SceneManager.UnloadSceneAsync("GameOverScene"); ;
         yield return load;
     }

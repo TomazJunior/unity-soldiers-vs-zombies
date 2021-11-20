@@ -30,6 +30,7 @@ public class AllySlot : MonoBehaviour
     internal void SetAlly(AllyStats allyStats)
     {
         this.ally = Instantiate<Ally>(allyStats.allyPrefab, transform.position, Quaternion.identity);
+        this.ally.transform.SetParent(this.transform);
         this.ally.lifeManager.FullLife = allyStats.life;
         this.ally.spriteRenderer.sprite = allyStats.sprite;
         this.ally.Cost = allyStats.cost;
